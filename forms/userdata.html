@@ -5,19 +5,33 @@
 	<body>
 		<H1>What is this?</H1>
 		<p>This is a form.  I want to spy on you. I will use this information for personal gain.</p>
-		<form method = "post" action = "http://www.deitel.com">
+		<form method = "post" action = "http://www.deitel.com"> <!-- change this action-->
+            <p>
+                <label>First Name</label>
+                <input type="text" autofocus/>
+                <label>Middle Name</label>
+                <input type="text" autofocus/>
+                <label>Last Name</label>
+                <input type="text" autofocus/>
+            </p>
 			<p>
-				<label>Color:
+                <label>Email address
+                    <input type="TEXT"/>you@youremail.com
+                </label>
+            </p>
+            <p>
+                <label>Birthdate:
+                    <input type = "date" autofocus />
+                    yyyy-mm-dd
+                </label>
+            </p>
+            <p>
+				<label>Favorite Color:
 					<input type = "color" autofocus />
 					(Hexadecimal code such as #ADD8E6)
 				</label>
 			</p>
-			<p>
-				<label>Date:
-					<input type = "date" autofocus />
-					yyyy-mm-dd
-				</label>
-			</p>
+
 			<p>
 				<input type="submit" value="Submit" />
 				<input type="reset" value="Clear" />
