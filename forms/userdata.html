@@ -1,41 +1,68 @@
 <html>
-	<head>
-		<title>A form page</title>
-	</head>
-	<body>
-		<H1>What is this?</H1>
-		<p>This is a form.  I want to spy on you. I will use this information for personal gain.</p>
-		<form method = "post" action = "http://www.deitel.com"> <!-- change this action-->
-            <p>
-                <label>First Name</label>
-                <input type="text" autofocus/>
-                <label>Middle Name</label>
-                <input type="text" />
-                <label>Last Name</label>
-                <input type="text" />
-            </p>
-			<p>
-                <label>Email address
-                    <input type="email" placeholder="you@youremail.com" />you@youremail.com
-                </label>
-            </p>
-            <p>
-                <label>Birthdate:
-                    <input type = "date" />(yyyy-mm-dd)
-                </label>
-            </p>
-            <p>
-				<label>Favorite Color:
-					<input type = "color" autofocus />
-					(Hexadecimal code such as #ADD8E6)
-				</label>
-			</p>
+<head>
+    <meta charset = "utf-8">
+    <title>Index Title</title>
+</head>
+<body bgcolor="purple">
+<table style="width:100%" border="1px solid black">
+    <table id="header_content" height="200px" width="75%" align="center"  bgcolor="white" border="1px black" >
+        <tr>
+            <td align="center" valign="bottom">
+                <a href="../index.html">Back Home</a>
+                <a href="../sites/personal_blog.html">Blog</a>
+                <a href="../sites/sites.html">Favorite Sites</a>
+                <a href="../sports/sports.html">Sports</a>
+                <a href="../outdoors/activities.html">Colorado Fun</a>
+                <a href="../thoughts/beer.html">Thoughts about beer.</a>
+                <a href="../forms/userdata.html">Tell me about yourself</a>
+            </td>
+        </tr>
+    </table>
+    <table id="content_body" align="center" style="width:75%" height="100%"  bgcolor="white">
+        <tr>
+            <td valign="top">
+                <body>
+                <H1>What is this?</H1>
+                <p>This is a form.  I want to spy on you. I will use this information for personal gain.</p>
+                <form method = "post" action = "http://www.deitel.com"> <!-- change this action-->
+                    <p>
+                        <label>First Name</label>
+                        <input type="text" autofocus/>
+                        <label>Middle Name</label>
+                        <input type="text" />
+                        <label>Last Name</label>
+                        <input type="text" />
+                    </p>
+                    <p>
+                        <label>Email address
+                            <input type="email" placeholder="you@youremail.com" />you@youremail.com
+                        </label>
+                    </p>
+                    <p>
+                        <label>Birthdate:
+                            <input type = "date" />(yyyy-mm-dd)
+                        </label>
+                    </p>
+                    <p>
+                        <label>Favorite Color:
+                            <input type = "color" autofocus />
+                            (Hexadecimal code such as #ADD8E6)
+                        </label>
+                    </p>
 
-			<p>
-				<input type="submit" value="Submit" />
-				<input type="reset" value="Clear" />
-			</p>
-		</form>
-	</body>	
+                    <p>
+                        <input type="submit" value="Submit" />
+                        <input type="reset" value="Clear" />
+                    </p>
+                </form>
+                </body>
+            </td>
+        </tr>
+    </table>
 
+</table>
+
+
+
+</body>
 </html>
