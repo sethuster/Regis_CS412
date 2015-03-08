@@ -1,5 +1,5 @@
 #header_content{
-    background-color: purple;
+    background-color: clear;
     float: center;
 }
 
@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: purple;
+  background-image: url("backgroundImg.png");
   color: #222;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
@@ -16,7 +16,7 @@ body {
 }
 
 nav {
-  background-color: #CC99FF;
+  background:rgba(255,255,255,0.3);
   border: 1px solid #dedede;
   border-radius: 4px;
   box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
