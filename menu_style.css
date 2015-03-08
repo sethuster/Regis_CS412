@@ -4,7 +4,9 @@
 }
 
 #content_body{
-    background-color: white;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 body {
