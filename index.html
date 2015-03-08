@@ -2,23 +2,34 @@
 <head>
 	<meta charset = "utf-8">
 	<title>Index Title</title>
+    <link rel="stylesheet" type="text/css" href="menu_style.css">
 </head>
-	<body bgcolor="purple">
-        <table style="width:100%" border="1px solid black">
-            <table id="header_content" height="200px" width="75%" align="center"  bgcolor="white" border="1px black" >
+	<body>
+        <table style="width:100%" >
+            <table id="header_content" height="200px" width="75%" align="center">
                 <tr>
                     <td align="center" valign="bottom">
-                        <a href="./index.html">Back Home</a>
-                        <a href="./sites/personal_blog.html">Blog</a>
-                        <a href="./sites/sites.html">Favorite Sites</a>
-                        <a href="./sports/sports.html">Sports</a>
-                        <a href="./outdoors/activities.html">Colorado Fun</a>
-                        <a href="./thoughts/beer.html">Thoughts about beer.</a>
-                        <a href="./forms/userdata.html">Tell me about yourself</a>
+                        <nav>
+                            <ul>
+                                <li><a href="./index.html">Home</a></li>
+                                <li><a href="./aboutme.html">About Me</a> <span class="caret"></span>
+                                    <div>
+                                        <ul>
+                                            <li><a href="./sites/personal_blog.html">Blog</a></li>
+                                            <li><a href="./sites/sites.html">Favorite Sites</a></li>
+                                            <li><a href="./sports/sports.html">Sports</a></li>
+                                            <li><a href="./thoughts/beer.html">beer.</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a href="./outdoors/activities.html">Colorado Fun</a></li>
+                                <li><a href="./forms/userdata.html">About you</a></li>
+                            </ul>
+                        </nav>
                     </td>
                 </tr>
             </table>
-            <table id="content_body" align="center" style="width:75%" height="100%"  bgcolor="white">
+            <table id="content_body" align="center" style="width:75%" height="100%">
                 <tr>
                     <td valign="top">
                         <H1>This is my homepage.</H1>
