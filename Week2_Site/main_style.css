@@ -1,5 +1,5 @@
 table, th, td {
-
+    border: 1px solid black;
 }
 
 body{
@@ -7,12 +7,45 @@ body{
     background-size: 100% 100%;
 }
 
-#menu_leftnav{
-    background-color: #66CCFF;
-    border-radius: 20px;
-    padding: 10px;
-    opacity: 0.3;
+.menu{
+    margin:0;
+    padding:0;
+    width:150px;
+    list-style:none;
+    background:rgb(255,255,255);
 }
+.menu li{
+    padding:0;
+    margin:0 0 1px 0;
+    height:40px;
+    display:block;
+}
+.menu li a{
+    text-align:left;
+    height:40px;
+    padding:0px 25px;
+    font:16px Verdana, Arial, Helvetica, sans-serif;
+    /*color:rgb(255,255,255);*/
+    color: black;
+    display:block;
+    background:url('images/menu/verMenuImages.png') 0px 0px no-repeat;
+    text-decoration:none;
+}
+    .menu li a:hover{
+    background:url('images/menu/verMenuImages.png') 0px -40px no-repeat;
+    color:rgb(255,255,255);
+}
+    .menu li a.active, .menu li a.active:hover{
+    background:url('images/menu/verMenuImages.png') 0px -80px no-repeat;
+    color:rgb(255,255,255);
+}
+.menu li a span{
+    line-height:40px;
+}
+
+
+/* Specific Styles */
+
 
 #content_body{
     background-color: white;
