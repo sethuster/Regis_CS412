@@ -1,5 +1,5 @@
 table, th, td {
-    border: 1px solid black;
+    
 }
 
 html{
@@ -78,4 +78,9 @@ a.bot-link:link{
   border-radius: 5px;
   white-space: nowrap;
   float: right;
+}
+
+.prices td{
+    font-weight: bold;
+    border: 1px solid black;
 }
