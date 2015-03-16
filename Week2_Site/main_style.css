@@ -2,9 +2,9 @@ table, th, td {
     border: 1px solid black;
 }
 
-body{
-    background-image: url("images/futurama_back.jpg");
-    background-size: 100% 100%;
+html{
+    background: url("images/futurama_back.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
 
 .menu{
@@ -43,15 +43,12 @@ body{
     line-height:40px;
 }
 
-
 /* Specific Styles */
-
-
 #content_body{
     background-color: white;
     border-radius: 20px;
     padding: 10px;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 #page_header{
@@ -65,3 +62,20 @@ body{
     color: #66CCFF;
 }
 
+a.bot-link:link{
+  font-family: Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
+  color: black;
+  background-color: #99CCFF;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  padding: 0.7% 2.0%;
+  text-decoration: none;
+  margin-left: 0;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  border: 1px solid #000066;
+  border-radius: 5px;
+  white-space: nowrap;
+  float: right;
+}
