@@ -38,15 +38,22 @@ function init_prods(){
 }
 
 function write_out(ordered_pids, quantities){
+    var totals = []
+    var grandtotal = 0;
     document.write("<h2>Product Orders</h2>");
     document.write('<table border="1" cellspacing="1" cellpadding="5">');
-    document.write('<tr><td> Product Name </td><td>Total Sales</td></tr>')
+    document.write('<tr><td> <b>Product Name</b> </td><td><b>Total Sales</b></td></tr>')
     for(i = 0; i < ordered_pids.length; i++){
         product = products[ordered_pids[i]-1]; //get the product zero-based index
         price = prices[ordered_pids[i] -1]; //get the price for the product
         total = price * quantities[i]; //get the quanity ordered
-        document.write('<tr><td>'+ product + '</td><td>' + total + '</td></tr>')
+        totals.push(total)
+        document.write('<tr><td>'+ product + '</td><td> $' + total.toFixed(2) + '</td></tr>')
     }
+    for(i = 0; i < totals.length; i++){
+        grandtotal += totals[i];
+    }
+    document.write('<tr><td><b>Grand Total:</b></td><td><b> $' + grandtotal.toFixed(2) + '</b></td></tr>')
     document.write('</table>');
 }
 
