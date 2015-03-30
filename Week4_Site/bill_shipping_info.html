@@ -50,10 +50,14 @@
                     Zip: <input type="text" name="cust_ship_zip" value="10019" size="10" maxlength="10">
                     <br><br>
                 </form>
+
+
             </td>
         </tr>
+        <tr>
+            <td><p id="today">some date</p>
+        </tr>
         <tr id="linker_info" valign="bottom" height="5%">
-            
             <td align="right"><a href="./bill_shipping_info.html" class="bot-link" >Shipping Info</a> </td>
         </tr>
     </table>
@@ -66,6 +70,11 @@
     </table>
 
 </table>
-
+<script type="text/javascript">
+    var today = new Date();
+    var sixweeks = 1000 * 60 * 60 * 24 * 42;
+    var sixweekstime = new Date(new Date().getTime() + sixweeks);
+    document.getElementById("today").innerHTML = "<b>Todays Date:</b> " + today.toDateString() + "  <b>Estimated Delivery:</b> " + sixweekstime.toDateString();
+</script>
 </body>
 </html>
