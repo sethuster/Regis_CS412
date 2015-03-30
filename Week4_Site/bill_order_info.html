@@ -30,7 +30,7 @@
         <tr valign="top" height="5%">
             <td><h2>Order Information</h2></td>
         </tr>
-        <form method="get">
+        <form method="get" action="./bill_billing_info.html">
         <tr valign="top"  height="90%">
             <td>
                 <table id="product_list" width="100%">
@@ -46,7 +46,7 @@
                         <td>
                             <!-- Price of Unit -->
                             Price: $160
-                            <br>Quantity: <input type="text" size="3" maxlength="3" value="0">
+                            <br>Quantity: <input type="text" name="bending_qty" size="3" maxlength="3" value="0">
                         </td>
                     </tr>
                     <tr>
@@ -61,7 +61,7 @@
                         <td>
                             <!-- Price of Unit -->
                             Price: $160
-                            <br>Quantity: <input type="text" size="3" maxlength="3" value="0">
+                            <br>Quantity: <input type="text" name="acting_qty" size="3" maxlength="3" value="0">
                         </td>
                     </tr>
                     <tr>
@@ -76,7 +76,7 @@
                         <td>
                             <!-- Price of Unit -->
                             Price: $299.99
-                            <br>Quantity: <input type="text" size="3" maxlength="3" value="0">
+                            <br>Quantity: <input type="text" size="3" name="devil_qty" maxlength="3" value="0">
                         </td>
                     </tr>
                     <tr>
@@ -91,7 +91,7 @@
                         <td>
                             <!-- Price of Unit -->
                             Price: $169.69
-                            <br>Quantity: <input type="text" size="3" maxlength="3" value="0">
+                            <br>Quantity: <input type="text" name="hedonism_qty" size="3" maxlength="3" value="0">
                         </td>
                     </tr>
                     <tr>
@@ -106,7 +106,7 @@
                         <td>
                             <!-- Price of Unit -->
                             Price: $199.99
-                            <br>Quantity: <input type="text" size="3" maxlength="3" value="0">
+                            <br>Quantity: <input type="text" name="xmas_qty" size="3" maxlength="3" value="0">
                         </td>
                     </tr>
                     <tr>
@@ -121,7 +121,7 @@
                         <td>
                             <!-- Price of Unit -->
                             Price: $249.99
-                            <br>Quantity: <input type="text" size="3" maxlength="3" value="0">
+                            <br>Quantity: <input type="text" size="3" name="stabbing_qty" maxlength="3" value="0">
                         </td>
                     </tr>
                     <tr>
@@ -136,16 +136,16 @@
                         <td>
                             <!-- Price of Unit -->
                             Price: $249.99
-                            <br>Quantity: <input type="text" size="3" maxlength="3" value="0">
+                            <br>Quantity: <input type="text" size="3" name="clamping_qty" maxlength="3" value="0">
                         </td>
                     </tr>
                 </table>
             </td>
         </tr>
-        </form>
         <tr id="linker_info" valign="bottom" height="5%">
-            <td align="right"><a href="./bill_order_info.html" class="bot-link" >Order Info</a> </td>
+            <td align="right"><input class="bot-link" type="submit" name="submit" value="Order Now"></td>
         </tr>
+        </form>
     </table>
     <table id="spacer_content" width="15%" height="1200px" ></table>
     <table id="footer" align="center" valign="bottom" height="15%" width="100%">

@@ -28,12 +28,12 @@
     </table>
     <table id="content_body" align="left" height="100%"  width="69%" >
         <tr valign="top" height="5%">
-            <td><h2>Billing Information</h2></td>
+            <td><h2>Billing & Shipping Information</h2></td>
         </tr>
+        <form method="get">
         <tr id="customer_info" valign="top" height="20%">
             <td>
                 <h3>Customer Information</h3>
-                <form method="get">
                     First Name: <input type="text" name="cust_first_name" value="Philip" size="30">
                     Middle Initial: <input type="text" name="cust_middle_name" value="J" maxlength="2" size="2">
                     Last Name: <input type="text" name="cust_last_name" value="Fry" size="30">
@@ -44,12 +44,29 @@
                     State: <input type="text" name="cust_state" value="New York" size="20" maxlength="20">
                     Zip: <input type="text" name="cust_zip" value="10019" size="10" maxlength="10">
                     <br><br>
-                </form>
             </td>
         </tr>
+        <tr id="shipping_info" valign="top" height="90%">
+            <td>
+                <h3>Shipping Address</h3>
+                    Use Billing Address:
+                    <input type="radio" name="use_billing" value="yes">Yes
+                    <input type="radio" name="use_billing" value="no" checked> No <br><br>
+                    First Name: <input type="text" name="cust_ship_first_name" value="Philip" size="30">
+                    Middle Initial: <input type="text" name="cust_ship_middle_name" value="J" maxlength="2" size="2">
+                    Last Name: <input type="text" name="cust_ship_last_name" value="Fry" size="30">
+                    <br><br>
+                    Address: <input type="text" name="cust_ship_address1" value="13 W 57th St" maxlength="50" size="50"><br>
+                    Address: <input type="text" name="cust_ship_address2" maxlength="50" size="50"><br><br>
+                    City: <input type="text" name="cust_ship_city" value="New New York" size="30" maxlength="30">
+                    State: <input type="text" name="cust_ship_state" value="New York" size="20" maxlength="20">
+                    Zip: <input type="text" name="cust_ship_zip" value="10019" size="10" maxlength="10">
+                    <br><br>
+            </td>
+        </tr>
+
         <tr id="payment_info" valign="top" height="70%">
             <td><h3>Payment Information</h3>
-                <form method="get">
                     You only get to pay with a credit card.  I need money.
                     <br><br>
                     Card Type:
@@ -90,12 +107,16 @@
                     </select>
                     CCV Code: <input type="text" name="cust_ccv" size="3" maxlength="3">
                     <br><br>
-                </form>
             </td>
         </tr>
-        <tr id="linker_info" valign="bottom" height="5%">
-            <td align="right"><a href="./bill_shipping_info.html" class="bot-link" >Shipping Info</a> </td>
+
+        <tr>
+            <td><p id="today">some date</p>
         </tr>
+        <tr id="linker_info" valign="bottom" height="5%">
+            <td align="right"><input class="bot-link" type="submit" name="submit" value="Order"></td>
+        </tr>
+        </form>
     </table>
     <table id="spacer_content" width="15%" height="1200px" ></table>
     <table id="footer" align="center" valign="bottom" height="15%" width="100%">
@@ -106,6 +127,11 @@
     </table>
 
 </table>
-
+<script type="text/javascript">
+    var today = new Date();
+    var sixweeks = 1000 * 60 * 60 * 24 * 42;
+    var sixweekstime = new Date(new Date().getTime() + sixweeks);
+    document.getElementById("today").innerHTML = "<b>Todays Date:</b> " + today.toDateString() + "  <b>Estimated Delivery:</b> " + sixweekstime.toDateString();
+</script>
 </body>
 </html>
