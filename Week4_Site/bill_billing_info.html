@@ -26,11 +26,11 @@
         </table>
         <td>
     </table>
-    <table id="content_body" align="left" height="1200px"  width="69%" >
+    <table id="content_body" align="left" height="100%"  width="69%" >
         <tr valign="top" height="5%">
             <td><h2>Billing Information</h2></td>
         </tr>
-        <tr id="customer_info" valign="top" height="30%">
+        <tr id="customer_info" valign="top" height="20%">
             <td>
                 <h3>Customer Information</h3>
                 <form method="get">
@@ -43,15 +43,58 @@
                     City: <input type="text" name="cust_city" value="New New York" size="30" maxlength="30">
                     State: <input type="text" name="cust_state" value="New York" size="20" maxlength="20">
                     Zip: <input type="text" name="cust_zip" value="10019" size="10" maxlength="10">
-
+                    <br><br>
                 </form>
             </td>
         </tr>
         <tr id="payment_info" valign="top" height="70%">
-            <td><h3>Payment Information</h3></td>
+            <td><h3>Payment Information</h3>
+                <form method="get">
+                    You only get to pay with a credit card.  I need money.
+                    <br><br>
+                    Card Type:
+                    <select name="Card Type">
+                        <option value="Mastercard">MasterCard</option>
+                        <option value="Visa">Visa</option>
+                        <option value="American Express">American Express</option>
+                        <option value="Discover">Discover</option>
+                    </select>
+                    Card Number: <input type="text" name="cust_cardnumber" size="16" maxlength="16"><br><br>
+                    Expiration Date: Month:
+                    <select name="month">
+                        <option value="January">January-01</option>
+                        <option value="February">February-02</option>
+                        <option value="March">March-03</option>
+                        <option value="April">April-04</option>
+                        <option value="May">May-05</option>
+                        <option value="June">June-06</option>
+                        <option value="July">July-07</option>
+                        <option value="August">August-08</option>
+                        <option value="September">September-09</option>
+                        <option value="October">October-10</option>
+                        <option value="November">November-11</option>
+                        <option value="December">December-12</option>
+                    </select>
+                    Year: <select name="year">
+                        <option value="2005">2005</option>
+                        <option value="2006">2006</option>
+                        <option value="2007">2007</option>
+                        <option value="2008">2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                        <option value="2011">2011</option>
+                        <option value="2012">2012</option>
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                    </select>
+                    CCV Code: <input type="text" name="cust_ccv" size="3" maxlength="3">
+                    <br><br>
+                </form>
+            </td>
         </tr>
         <tr id="linker_info" valign="bottom" height="5%">
-            <td align="right"><a href="./bill_shipping_info.html" class="bot-link" >Next</a> </td>
+            <td align="right"><a href="./bill_shipping_info.html" class="bot-link" >Shipping Info</a> </td>
         </tr>
     </table>
     <table id="spacer_content" width="15%" height="1200px" ></table>
