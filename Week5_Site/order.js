@@ -1,5 +1,25 @@
-function setShipping(value){
+//Order info functions
+function checkOrder(form){
+    //this function will be used to verify input on the bill_order_info form
+    var wegood = true;
+    qtys = document.getElementsByTagName('input');
+    for (i = 0; i < qtys.length; i++){
+        if(qtys[i].value)
+        {
+            qtys[i].style.backgroundColor = "#FFFFFF";
+            if((isNaN(qtys[i].value)) && (qtys[i].value != "Order Now"))
+            {
+                wegood = false;
+                qtys[i].style.backgroundColor = "#FF9999";
+            }
+        }
+    }
+    document.getElementById('orderbtn').style.backgroundColor = "#99CCFF";
+    return wegood;
+}
 
+//Billing info functions
+function setShipping(value){
     if(value == "parcel")
     {
         var sixweeks = 1000 * 60 * 60 * 24 * 42;

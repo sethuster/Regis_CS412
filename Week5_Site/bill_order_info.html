@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Seth's Electronics</title>
     <link rel="stylesheet" type="text/css" href="main_style.css">
+    <script type="text/javascript" src="order.js"></script>
 </head>
 <body>
 <table style="width:100%" >
@@ -30,7 +31,7 @@
         <tr valign="top" height="5%">
             <td><h2>Order Information</h2></td>
         </tr>
-        <form method="get" action="./bill_billing_info.html">
+        <form method="get" name= "orderform" onsubmit="return checkOrder(this.form)" action="./bill_billing_info.html">
         <tr valign="top"  height="90%">
             <td>
                 <table id="product_list" width="100%">
@@ -46,7 +47,7 @@
                         <td>
                             <!-- Price of Unit -->
                             Price: $160
-                            <br>Quantity: <input type="text" name="bending_qty" size="3" maxlength="3" value="0">
+                            <br>Quantity: <input type="text" name="bending_qty" size="3" maxlength="3" placeholder="0">
                         </td>
                     </tr>
                     <tr>
@@ -61,7 +62,7 @@
                         <td>
                             <!-- Price of Unit -->
                             Price: $160
-                            <br>Quantity: <input type="text" name="acting_qty" size="3" maxlength="3" value="0">
+                            <br>Quantity: <input type="text" name="acting_qty" size="3" maxlength="3" placeholder="0">
                         </td>
                     </tr>
                     <tr>
@@ -76,7 +77,7 @@
                         <td>
                             <!-- Price of Unit -->
                             Price: $299.99
-                            <br>Quantity: <input type="text" size="3" name="devil_qty" maxlength="3" value="0">
+                            <br>Quantity: <input type="text" size="3" name="devil_qty" maxlength="3" placeholder="0">
                         </td>
                     </tr>
                     <tr>
@@ -91,7 +92,7 @@
                         <td>
                             <!-- Price of Unit -->
                             Price: $169.69
-                            <br>Quantity: <input type="text" name="hedonism_qty" size="3" maxlength="3" value="0">
+                            <br>Quantity: <input type="text" name="hedonism_qty" size="3" maxlength="3" placeholder="0">
                         </td>
                     </tr>
                     <tr>
@@ -106,7 +107,7 @@
                         <td>
                             <!-- Price of Unit -->
                             Price: $199.99
-                            <br>Quantity: <input type="text" name="xmas_qty" size="3" maxlength="3" value="0">
+                            <br>Quantity: <input type="text" name="xmas_qty" size="3" maxlength="3" placeholder="0">
                         </td>
                     </tr>
                     <tr>
@@ -121,7 +122,7 @@
                         <td>
                             <!-- Price of Unit -->
                             Price: $249.99
-                            <br>Quantity: <input type="text" size="3" name="stabbing_qty" maxlength="3" value="0">
+                            <br>Quantity: <input type="text" size="3" name="stabbing_qty" maxlength="3" placeholder="0">
                         </td>
                     </tr>
                     <tr>
@@ -136,14 +137,14 @@
                         <td>
                             <!-- Price of Unit -->
                             Price: $249.99
-                            <br>Quantity: <input type="text" size="3" name="clamping_qty" maxlength="3" value="0">
+                            <br>Quantity: <input type="text" size="3" name="clamping_qty" maxlength="3" placeholder="0">
                         </td>
                     </tr>
                 </table>
             </td>
         </tr>
         <tr id="linker_info" valign="bottom" height="5%">
-            <td align="right"><input class="bot-link" type="submit" name="submit" value="Order Now"></td>
+            <td align="right"><input id="orderbtn" class="bot-link" type="submit" name="submit" value="Order Now"></td>
         </tr>
         </form>
     </table>
