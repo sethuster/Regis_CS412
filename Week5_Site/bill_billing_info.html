@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <title>Seth's Electronics</title>
     <link rel="stylesheet" type="text/css" href="main_style.css">
+    <script type="text/javascript" src="order.js"></script>
 </head>
-<body>
+<body onload="setToday();">
 <table style="width:100%" >
     <table id="page_header" height="100px" width="85%" align="left">
         <td>
@@ -50,8 +51,8 @@
             <td>
                 <h3>Shipping Address</h3>
                     Use Billing Address:
-                    <input type="radio" name="use_billing" value="yes">Yes
-                    <input type="radio" name="use_billing" value="no" checked> No <br><br>
+                    <input type="radio" name="use_billing" value="yes" onclick="setShippingInfo(this.form)">Yes
+                    <input type="radio" name="use_billing" value="no" checked onclick="clearshipping(this.form)"> No <br><br>
                     First Name: <input type="text" name="cust_ship_first_name" placeholder="Herbert" size="30">
                     Middle Initial: <input type="text" name="cust_ship_middle_name"  maxlength="2" size="2">
                     Last Name: <input type="text" name="cust_ship_last_name" placeholder="Farnsworth" size="30">
@@ -62,9 +63,15 @@
                     State: <input type="text" name="cust_ship_state" placeholder="New York" size="20" maxlength="20">
                     Zip: <input type="text" name="cust_ship_zip" placeholder="10019" size="10" maxlength="10">
                     <br><br>
+                    Shipping Options:
+                    <input type="radio" name="shipping" id="parcel_ship" value="parcel" checked onclick="setShipping(this.value)">Parcel
+                    <input type="radio" name="shipping" id="reg_ship" value="regular" onclick="setShipping(this.value)">Regular
+                    <input type="radio" name="shipping" id="express" value="express" onclick="setShipping(this.value)">Express <br><br>
             </td>
         </tr>
-
+        <tr>
+            <td><p id="today" >some date</p>
+        </tr>
         <tr id="payment_info" valign="top" height="70%">
             <td><h3>Payment Information</h3>
                     You only get to pay with a credit card.  I need money.
@@ -110,10 +117,6 @@
                     <br><br>
             </td>
         </tr>
-
-        <tr>
-            <td><p id="today">some date</p>
-        </tr>
         <tr id="linker_info" valign="bottom" height="5%">
             <td align="right"><input class="bot-link" type="submit" name="submit" value="Order"></td>
         </tr>
@@ -128,11 +131,5 @@
     </table>
 
 </table>
-<script type="text/javascript">
-    var today = new Date();
-    var sixweeks = 1000 * 60 * 60 * 24 * 42;
-    var sixweekstime = new Date(new Date().getTime() + sixweeks);
-    document.getElementById("today").innerHTML = "<b>Todays Date:</b> " + today.toDateString() + "  <b>Estimated Delivery:</b> " + sixweekstime.toDateString();
-</script>
 </body>
 </html>
