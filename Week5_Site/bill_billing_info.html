@@ -34,15 +34,15 @@
         <tr id="customer_info" valign="top" height="20%">
             <td>
                 <h3>Customer Information</h3>
-                    First Name: <input type="text" name="cust_first_name" value="Philip" size="30">
-                    Middle Initial: <input type="text" name="cust_middle_name" value="J" maxlength="2" size="2">
-                    Last Name: <input type="text" name="cust_last_name" value="Fry" size="30">
+                    First Name: <input type="text" name="cust_first_name" placeholder="Philip" size="30">
+                    Middle Initial: <input type="text" name="cust_middle_name" placeholder="J" maxlength="2" size="2">
+                    Last Name: <input type="text" name="cust_last_name" placeholder="Fry" size="30">
                     <br><br>
-                    Address: <input type="text" name="cust_address1" value="13 W 57th St" maxlength="50" size="50"><br>
+                    Address: <input type="text" name="cust_address1" placeholder="13 W 57th St" maxlength="50" size="50"><br>
                     Address: <input type="text" name="cust_address2" maxlength="50" size="50"><br><br>
-                    City: <input type="text" name="cust_city" value="New New York" size="30" maxlength="30">
-                    State: <input type="text" name="cust_state" value="New York" size="20" maxlength="20">
-                    Zip: <input type="text" name="cust_zip" value="10019" size="10" maxlength="10">
+                    City: <input type="text" name="cust_city" placeholder="New New York" size="30" maxlength="30">
+                    State: <input type="text" name="cust_state" placeholder="New York" size="20" maxlength="20">
+                    Zip: <input type="text" name="cust_zip" placeholder="10019" size="10" maxlength="10">
                     <br><br>
             </td>
         </tr>
@@ -52,15 +52,15 @@
                     Use Billing Address:
                     <input type="radio" name="use_billing" value="yes">Yes
                     <input type="radio" name="use_billing" value="no" checked> No <br><br>
-                    First Name: <input type="text" name="cust_ship_first_name" value="Philip" size="30">
-                    Middle Initial: <input type="text" name="cust_ship_middle_name" value="J" maxlength="2" size="2">
-                    Last Name: <input type="text" name="cust_ship_last_name" value="Fry" size="30">
+                    First Name: <input type="text" name="cust_ship_first_name" placeholder="Herbert" size="30">
+                    Middle Initial: <input type="text" name="cust_ship_middle_name"  maxlength="2" size="2">
+                    Last Name: <input type="text" name="cust_ship_last_name" placeholder="Farnsworth" size="30">
                     <br><br>
-                    Address: <input type="text" name="cust_ship_address1" value="13 W 57th St" maxlength="50" size="50"><br>
+                    Address: <input type="text" name="cust_ship_address1" placeholder="13 W 57th St" maxlength="50" size="50"><br>
                     Address: <input type="text" name="cust_ship_address2" maxlength="50" size="50"><br><br>
-                    City: <input type="text" name="cust_ship_city" value="New New York" size="30" maxlength="30">
-                    State: <input type="text" name="cust_ship_state" value="New York" size="20" maxlength="20">
-                    Zip: <input type="text" name="cust_ship_zip" value="10019" size="10" maxlength="10">
+                    City: <input type="text" name="cust_ship_city" placeholder="New New York" size="30" maxlength="30">
+                    State: <input type="text" name="cust_ship_state" placeholder="New York" size="20" maxlength="20">
+                    Zip: <input type="text" name="cust_ship_zip" placeholder="10019" size="10" maxlength="10">
                     <br><br>
             </td>
         </tr>
@@ -76,7 +76,8 @@
                         <option value="American Express">American Express</option>
                         <option value="Discover">Discover</option>
                     </select>
-                    Card Number: <input type="text" name="cust_cardnumber" size="16" maxlength="16"><br><br>
+                <!-- Amex cards use 15 digits don't forget -->
+                    Card Number: <input type="text" name="cust_cardnumber" size="16" maxlength="16" placeholder="5632123412341234"><br><br>
                     Expiration Date: Month:
                     <select name="month">
                         <option value="January">January-01</option>
@@ -105,7 +106,7 @@
                         <option value="2014">2014</option>
                         <option value="2015">2015</option>
                     </select>
-                    CCV Code: <input type="text" name="cust_ccv" size="3" maxlength="3">
+                    CCV Code: <input type="text" name="cust_ccv" size="3" maxlength="3" placeholder="123">
                     <br><br>
             </td>
         </tr>
