@@ -85,6 +85,7 @@ function validateForm(form){
     var valid_cc = true;
     var cc_num = document.getElementById("cc_num");
     var cc_type = document.getElementById("cc_type");
+    var cvc_code = document.getElementById("cvc_code");
     var ci_info = document.getElementsByClassName("ci_info");
     var cyear = new Date().getFullYear();
     var cmonth = new Date().getMonth();
@@ -99,7 +100,7 @@ function validateForm(form){
             }
         }
         //check to make sure that the zip code and cc number fields are numbers
-        if((ci_info[i].name.indexOf("zip") > -1)||(ci_info[i].name.indexOf("cc") > -1)){
+        if((ci_info[i].name.indexOf("zip") > -1)||(ci_info[i].name.indexOf("Credit Card") > -1)){
             if(isNaN(ci_info[i].value)){
                 //true if text is in this field
                 valid_ci = false;
@@ -120,6 +121,10 @@ function validateForm(form){
             setErrors(cc_num, "American Express Cards start with 37!");
             valid_cc = false;
         }
+        if(cvc_code.value.length < 4){
+            setErrors(cvc_code, "American Express Cards have a 4 digit CCV code");
+            valid_cc = false;
+        }
     }
     //check cc num length for non-amex
     if((cc_type.value == "Mastercard")||(cc_type.value == "Visa")||(cc_type.value == "Discover"))
@@ -128,6 +133,10 @@ function validateForm(form){
         {
             setErrors(cc_num, "Not enough Digits");
             valid_cc = false;
+        }
+        if(cvc_code.value.length < 3 || cvc_code.value.length > 3)
+        {
+            setErrors(cvc_code, "Your Credit Card has a 3 digit CCV code");
         }
     }
     //check mastercards start with 5
