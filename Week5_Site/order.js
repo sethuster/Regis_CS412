@@ -2,6 +2,7 @@
 function checkOrder(form){
     //this function will be used to verify input on the bill_order_info form
     var wegood = true;
+    var qty = 0;
     qtys = document.getElementsByTagName('input');
     for (i = 0; i < qtys.length; i++){
         if(qtys[i].value)
@@ -12,9 +13,23 @@ function checkOrder(form){
                 wegood = false;
                 qtys[i].style.backgroundColor = "#FF9999";
             }
+            else
+            {
+                if(!isNaN(qtys[i].value))
+                {
+                    qty += parseInt(qtys[i].value);
+                }
+            }
+
         }
     }
     document.getElementById('orderbtn').style.backgroundColor = "#99CCFF";
+    if(qty == 0)
+    {
+        wegood = false;
+        document.getElementById("order_err").innerHTML = "<b> You must order at least 1 item </b>"
+        document.getElementById("order_err").style.color = "red";
+    }
     return wegood;
 }
 
@@ -39,7 +54,7 @@ function setShipping(value){
 }
 
 function setToday(){
-    document.getElementById("today").innerHTML = "<b>Today:</b> " + new Date().toDateString();;
+    setShipping("parcel");
 }
 
 function setShippingInfo(form){
