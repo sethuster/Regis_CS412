@@ -31,20 +31,21 @@
         <tr valign="top" height="5%">
             <td><h2>Billing & Shipping Information</h2></td>
         </tr>
-        <form method="get" action="./bill_order_success.html">
+        <form method="get" onsubmit="return validateForm(this.form)" action="./bill_order_success.html">
         <tr id="customer_info" valign="top" height="20%">
             <td>
                 <h3>Customer Information</h3>
-                    First Name: <input type="text" name="cust_first_name" placeholder="Philip" size="30">
-                    Middle Initial: <input type="text" name="cust_middle_name" placeholder="J" maxlength="2" size="2">
-                    Last Name: <input type="text" name="cust_last_name" placeholder="Fry" size="30">
+                    First Name: <input type="text" class="ci_info" name="cust_first_name" placeholder="Philip" size="30">
+                    Middle Initial: <input type="text" class="ci_info" name="cust_middle_name" placeholder="J" maxlength="2" size="2">
+                    Last Name: <input type="text" class="ci_info" name="cust_last_name" placeholder="Fry" size="30">
                     <br><br>
-                    Address: <input type="text" name="cust_address1" placeholder="13 W 57th St" maxlength="50" size="50"><br>
-                    Address: <input type="text" name="cust_address2" maxlength="50" size="50"><br><br>
-                    City: <input type="text" name="cust_city" placeholder="New New York" size="30" maxlength="30">
-                    State: <input type="text" name="cust_state" placeholder="New York" size="20" maxlength="20">
-                    Zip: <input type="text" name="cust_zip" placeholder="10019" size="10" maxlength="10">
+                    Address: <input type="text" class="ci_info" name="cust_address1" placeholder="13 W 57th St" maxlength="50" size="50"><br>
+                    Address: <input type="text" class="ci_info" name="cust_address2" maxlength="50" size="50"><br><br>
+                    City: <input type="text" class="ci_info" name="cust_city" placeholder="New New York" size="30" maxlength="30">
+                    State: <input type="text" class="ci_info" name="cust_state" placeholder="New York" size="20" maxlength="20">
+                    Zip: <input type="text" class="ci_info" name="cust_zip" placeholder="10019" size="10" maxlength="10">
                     <br><br>
+                <p id="cust_info_err" class="error"></p>
             </td>
         </tr>
         <tr id="shipping_info" valign="top" height="90%">
@@ -53,20 +54,21 @@
                     Use Billing Address:
                     <input type="radio" name="use_billing" value="yes" onclick="setShippingInfo(this.form)">Yes
                     <input type="radio" name="use_billing" value="no" checked onclick="clearshipping(this.form)"> No <br><br>
-                    First Name: <input type="text" name="cust_ship_first_name" placeholder="Herbert" size="30">
-                    Middle Initial: <input type="text" name="cust_ship_middle_name"  maxlength="2" size="2">
-                    Last Name: <input type="text" name="cust_ship_last_name" placeholder="Farnsworth" size="30">
+                    First Name: <input type="text" class="ci_info" name="ship_first_name" placeholder="Herbert" size="30">
+                    Middle Initial: <input type="text" class="ci_info" name="ship_middle_name"  maxlength="2" size="2">
+                    Last Name: <input type="text" class="ci_info" name="ship_last_name" placeholder="Farnsworth" size="30">
                     <br><br>
-                    Address: <input type="text" name="cust_ship_address1" placeholder="13 W 57th St" maxlength="50" size="50"><br>
-                    Address: <input type="text" name="cust_ship_address2" maxlength="50" size="50"><br><br>
-                    City: <input type="text" name="cust_ship_city" placeholder="New New York" size="30" maxlength="30">
-                    State: <input type="text" name="cust_ship_state" placeholder="New York" size="20" maxlength="20">
-                    Zip: <input type="text" name="cust_ship_zip" placeholder="10019" size="10" maxlength="10">
+                    Address: <input type="text" class="ci_info" name="ship_address1" placeholder="13 W 57th St" maxlength="50" size="50"><br>
+                    Address: <input type="text" class="ci_info" name="ship_address2" maxlength="50" size="50"><br><br>
+                    City: <input type="text" class="ci_info"  name="ship_city" placeholder="New New York" size="30" maxlength="30">
+                    State: <input type="text" class="ci_info" name="ship_state" placeholder="New York" size="20" maxlength="20">
+                    Zip: <input type="text" class="ci_info" name="ship_zip" placeholder="10019" size="10" maxlength="10">
                     <br><br>
                     Shipping Options:
                     <input type="radio" name="shipping" id="parcel_ship" value="parcel" checked onclick="setShipping(this.value)">Parcel
                     <input type="radio" name="shipping" id="reg_ship" value="regular" onclick="setShipping(this.value)">Regular
                     <input type="radio" name="shipping" id="express" value="express" onclick="setShipping(this.value)">Express <br><br>
+                    <p id="ship_info_err" class="error"></p>
             </td>
         </tr>
         <tr>
@@ -77,16 +79,16 @@
                     You only get to pay with a credit card.  I need money.
                     <br><br>
                     Card Type:
-                    <select name="Card Type">
+                    <select id="cc_type" name="Credit Card Type" >
                         <option value="Mastercard">MasterCard</option>
                         <option value="Visa">Visa</option>
-                        <option value="American Express">American Express</option>
+                        <option value="American_Express">American Express</option>
                         <option value="Discover">Discover</option>
                     </select>
                 <!-- Amex cards use 15 digits don't forget -->
-                    Card Number: <input type="text" name="cust_cardnumber" size="16" maxlength="16" placeholder="5632123412341234"><br><br>
+                    Card Number: <input type="text" id="cc_num" class="ci_info" name="Credit Card Numer" size="16" maxlength="16" placeholder="5632123412341234"><br><br>
                     Expiration Date: Month:
-                    <select name="month">
+                    <select id="cc_month" name="Credit Card Month">
                         <option value="January">January-01</option>
                         <option value="February">February-02</option>
                         <option value="March">March-03</option>
@@ -100,7 +102,7 @@
                         <option value="November">November-11</option>
                         <option value="December">December-12</option>
                     </select>
-                    Year: <select name="year">
+                    Year: <select id="cc_year" name="Credit Card Year">
                         <option value="2005">2005</option>
                         <option value="2006">2006</option>
                         <option value="2007">2007</option>
@@ -113,8 +115,9 @@
                         <option value="2014">2014</option>
                         <option value="2015">2015</option>
                     </select>
-                    CCV Code: <input type="text" name="cust_ccv" size="3" maxlength="3" placeholder="123">
+                    CCV Code: <input type="text" class="ci_info" name="Credit Card CCV" size="3" maxlength="3" placeholder="123">
                     <br><br>
+                <p id="cc_info_err" class="error"></p>
             </td>
         </tr>
         <tr id="linker_info" valign="bottom" height="5%">
