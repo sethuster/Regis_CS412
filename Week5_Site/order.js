@@ -86,6 +86,8 @@ function validateForm(form){
     var cc_num = document.getElementById("cc_num");
     var cc_type = document.getElementById("cc_type");
     var ci_info = document.getElementsByClassName("ci_info");
+    var cyear = new Date().getFullYear();
+    var cmonth = new Date().getMonth();
     clearErrors();
     for(i = 0; i < ci_info.length; i++){
         if((ci_info[i].name.indexOf("address2") == -1)&&(ci_info[i].name.indexOf("middle") == -1)){
@@ -148,6 +150,12 @@ function validateForm(form){
             setErrors(cc_num, "Discover Cards Start with 6!");
             valid_cc = false;
         }
+    }
+    if((cc_year.value < cyear)||(cc_month.value < cmonth))
+    {
+        cc_info_err.innerHTML = "<b> Your Credit Card is expired.</b>";
+        cc_info_err.style.color = "red";
+        valid_cc = false;
     }
 
     if((valid_ci == true)&&(valid_cc == true)){
