@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<?php
+
+$number = 1234.56;
+
+// let's print the international format for the en_US locale
+setlocale(LC_MONETARY, 'en_US');
+echo money_format('%i', $number) . "\n";
+// USD 1,234.56
+
+$money1 = 68.75;
+$money2 = 54.35;
+$money = $money1 + $money2;
+// echo $money will output "123.1";
+$formatted = sprintf("%01.2f", $money);
+// echo $formatted will output "123.10"
+
+?>
+
+</body>
+</html>
