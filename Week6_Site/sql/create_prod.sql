@@ -1,6 +1,6 @@
 CREATE TABLE `cs482`.`product` (
   `prod_id` INT NOT NULL AUTO_INCREMENT,
-  'prod_name' VARCHAR(24) NULL,
+  `prod_name` VARCHAR(24) NULL,
   `prod_descrip` VARCHAR(2000) NULL,
   `prod_category` VARCHAR(1) NULL,
   `prod_cost` DECIMAL(6,2) NULL,

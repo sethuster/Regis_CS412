@@ -51,7 +51,7 @@ class product_list {
         while( $returned_row = mysql_fetch_row( $result ))
         {
             $category_list .= '<tr>
-                    <td align="center"><img src="/images/robots/' . $returned_row[3] . '" height="100px" width="100px"> </td>
+                    <td align="center"><img src="./images/robots/' . $returned_row[3] . '" height="100px" width="100px"> </td>
                     <td>
                         <h2>' . $returned_row[1] . '</h2>
                         <p>' . $returned_row[2] . '</p>
