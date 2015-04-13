@@ -21,8 +21,8 @@
         <table id="menu_leftnav"  height="400px" width="100%" >
             <nav>
                 <ul class="menu">
-                    <li><a href="./homePage.html">Home</a> </li>
-                    <li><a href="./battle_bots.html">Battle Bots</a></li>
+                    <li><a href="./homePage.php">Home</a> </li>
+                    <li><a href="battle_bots.php">Battle Bots</a></li>
                     <li><a href="./aboutus.html">About Us</a></li>
                 </ul>
             </nav>
@@ -40,9 +40,9 @@
             <hr>
             <p>Here's a brief sample of the different kinds of bots that we have available:</p>
                 <?php include("product_list.php");
-                $list = new product_list();
-                $list->query_db("ALL");
-                echo $list->get_list();
+                    $list = new product_list();
+                    $list->query_db("ALL");
+                    echo $list->get_list();
                 ?>
             </td>
         </tr>

@@ -25,7 +25,7 @@ class product_info {
     private $query = "SELECT * FROM product WHERE prod_id = ";
 
     function __construct($prodid){
-        $this->sqlinfo = new sqlcreds("private");
+        $this->sqlinfo = new sqlcreds();
         $this->_prodid = (int) $prodid;
         $this->queryDatabase();
     }

@@ -18,8 +18,8 @@
         <table id="menu_leftnav"  height="100%" width="100%" >
             <nav>
                 <ul class="menu">
-                    <li><a href="./homePage.html">Home</a> </li>
-                    <li><a href="./battle_bots.html">Battle Bots</a></li>
+                    <li><a href="homePage.php">Home</a> </li>
+                    <li><a href="./battle_bots.php">Battle Bots</a></li>
                     <li><a href="./aboutus.html">About Us</a></li>
                 </ul>
             </nav>

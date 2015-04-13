@@ -17,7 +17,7 @@ class product_list {
     private $showbots = "";
 
     function __construct(){
-        $this->sqlinfo = new sqlcreds("private");
+        $this->sqlinfo = new sqlcreds();
     }
 
     function query_db($category){
@@ -55,7 +55,7 @@ class product_list {
                     <td>
                         <h2>' . $returned_row[1] . '</h2>
                         <p>' . $returned_row[2] . '</p>
-                        <a class="bot-link" href="./product_detail.html?prod_id=' . $returned_row[0] . '"align="right">More Info</a>
+                        <a class="bot-link" href="./product_detail.php?prod_id=' . $returned_row[0] . '"align="right">More Info</a>
                     </td>
                 </tr>';
         }
@@ -69,7 +69,7 @@ class product_list {
     function list_bots($result){
         $dd_options = "";
         while( $returned_row = mysql_fetch_row( $result)){
-            $dd_options .= '<option value="./product_detail.html?prod_id=' . $returned_row[0] .
+            $dd_options .= '<option value="./product_detail.php?prod_id=' . $returned_row[0] .
                 '"> ' . $returned_row[1] . '</option>';
         }
         return '<select onchange="location = this.options[this.selectedIndex].value;">' . $dd_options . '</select>';

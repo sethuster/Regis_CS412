@@ -12,7 +12,7 @@ class sqlcreds {
     public $password = '';
     public $database = '';
 
-    function __construct($version){
+    function __construct($version = "regis"){
         if($version == "private"){
             $this->server = '127.0.0.1:3306';
             $this->username = 'root';
@@ -20,8 +20,8 @@ class sqlcreds {
         }
         else{
             $this->server = 'localhost:3306';
-            $this->username = "laurare2_student5";
-            $this->database = 'cs482';
+            $this->username = "laurare2_regis5";
+            $this->database = 'laurare2_student5';
             $this->password = '$v*L.;MB{Qzg';
         }
     }
