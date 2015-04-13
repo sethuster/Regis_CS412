@@ -22,7 +22,7 @@
             <nav>
                 <ul class="menu">
                     <li><a href="./homePage.html">Home</a> </li>
-                    <li><a href="./robots/battle.html">Battle Bots</a></li>
+                    <li><a href="./battle_bots.html">Battle Bots</a></li>
                     <li><a href="./aboutus.html">About Us</a></li>
                 </ul>
             </nav>
@@ -39,30 +39,16 @@
             <p>So if you want to buy some super cool battle robots, check out he menu and browse our collection. </p>
             <hr>
             <p>Here's a brief sample of the different kinds of bots that we have available:</p>
+                <?php include("product_list.php");
+                $list = new product_list();
+                $list->query_db("ALL");
+                echo $list->get_list();
+                ?>
             </td>
         </tr>
         </table>
         <table class="content_body" width="69%">
-        <tr>
-            <td align="center"><img src="./images/robots/Calculon_unit.png" height="100px" width="100px"> </td>
-            <td>
-                <h2>Acting Unit</h2>
-                <p>This is the top dog actor bot that will knock your socks off and win oscars.  If you're looking for a replacement for some of
-                    today's best actors you can't go wrong with this acting unit.  Contrary to popular belief this unit <b>CAN</b> act his way out of
-                    a paper bag.</p>
-                <a class="bot-link" href="./robots/acting_unit.html" align="right">More Info</a>
-            </td>
-        </tr>
-        </table>
-        <table class="content_body" width="69%">
-            <tr>
-                <td align="center"><img src="./images/robots/stabbing_unit.png" height="100px" width="100px"> </td>
-                <td>
-                    <h2>Stabbing Unit</h2>
-                    <p>Heya - Heya - Heya! This is probably the only real battle bot on this list.  Watch as it tries to stab everything in site!.</p>
-                    <a class="bot-link" href="./robots/stabbing_unit.html" align="right">More Info</a>
-                </td>
-            </tr>
+
         </table>
 
     </table>

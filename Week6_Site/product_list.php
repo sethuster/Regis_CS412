@@ -41,6 +41,11 @@ class product_list {
             $result = mysql_query($this->query_base . 'WHERE prod_category = "D"');
             $this->showbots .= $this->defender . $this->get_bots($result);
         }
+        if($category == "ALL"){
+            $result = mysql_query("SELECT prod_id, prod_name FROM product");
+            $this->showbots = "";
+            $this->showbots .= $this->list_bots($result);
+        }
     }
 
     function get_bots($result){
@@ -61,6 +66,16 @@ class product_list {
 
     function get_list(){
         return $this->showbots;
+    }
+
+    function list_bots($result){
+        $dd_options = "";
+        while( $returned_row = mysql_fetch_row( $result)){
+            $dd_options .= '<option value="./product_detail.html?prod_id=' . $returned_row[0] .
+                '"> ' . $returned_row[1] . '</option>';
+        }
+        return '<select onchange="location = this.options[this.selectedIndex].value;">' . $dd_options . '</select>';
+
     }
 
 }
