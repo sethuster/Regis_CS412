@@ -17,6 +17,7 @@ class product_info {
     private $_prod_ship_cost;
     private $_prod_ship_weight;
     private $_prod_filename;
+    private $_prod_demo;
 
     //sql info
     private $server = "127.0.0.1:3306";
@@ -32,7 +33,7 @@ class product_info {
     function queryDatabase(){
         mysql_connect( $this->server, $this->username);
         mysql_select_db($this->database);
-        $result = mysql_query("SELECT * FROM product WHERE prod_id = 1");
+        $result = mysql_query("SELECT * FROM product WHERE prod_id = " . $this->_prodid);
         $result = mysql_fetch_row($result);
         $this->_prodname = $result[1];
         $this->_prodDescription = $result[2];
@@ -42,6 +43,7 @@ class product_info {
         $this->_prod_ship_cost = $result[6];
         $this->_prod_ship_weight = $result[7];
         $this->_prod_filename = "../images/robots/" . $result[8];
+        $this->_prod_demo = $result[9];
     }
 
     function get_prodname(){
@@ -51,9 +53,18 @@ class product_info {
     function display_product(){
         $prod_head = '<table width="100%"><td><H1>'. $this->_prodname . '</H1></td></table>';
         $prod_body = '<table width="100%"><td width="35%"><img src="' . $this->_prod_filename . '" width="200px" height="300px"></td>
-                <td valign="top"><p>' . $this->_prodDescription . '</p></td></table>';
+                <td valign="top"><p>' . $this->_prodDescription . '</p>' . $this->_prod_demo . '</td></table>';
         $prod_prices = '<table class="prices" width="100%"><td>Unit Price: $' . $this->_prodcost . '</td><td>Shipping Cost: $' . $this->_prod_ship_cost . '</td></table>';
+        $end_table = '</td></table>';
         return $prod_head . $prod_body . $prod_prices;
+    }
+
+    function prod_demo(){
+        $prod_demo = "";
+        if($this->_prod_demo != ""){
+            $prod_demo = '<iframe width="100%" height="315" src="'. $this->_prod_demo . '" frameborder="0" allowfullscreen></iframe>';
+        }
+        return $prod_demo;
     }
 
 }
