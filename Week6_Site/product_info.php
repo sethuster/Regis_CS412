@@ -33,7 +33,7 @@ class product_info {
     function queryDatabase(){
         mysql_connect( $this->server, $this->username);
         mysql_select_db($this->database);
-        $result = mysql_query("SELECT * FROM product WHERE prod_id = " . $this->_prodid);
+        $result = mysql_query($this->query . $this->_prodid);
         $result = mysql_fetch_row($result);
         $this->_prodname = $result[1];
         $this->_prodDescription = $result[2];

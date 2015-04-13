@@ -1,18 +1,18 @@
 use cs482;
-insert into product ( prod_name, prod_descrip, prod_category, prod_cost, prod_qty_on_hand, prod_ship_cost, prod_ship_weight, prod_filename)
+insert into product ( prod_name, prod_descrip, prod_category, prod_cost, prod_qty_on_hand, prod_ship_cost, prod_ship_weight, prod_filename, prod_demo)
 values  
-("Bending Unit", "Classic Bending Unit", "F", 160.00, 10, 300.00, 75.0, "bending_unit.jpg"),
-("Acting Unit", "Classic Acting Unit", "F", 150.00, 10, 300.00, 75.0, "Calculon_unit.jpg"),
-("Clamping Unit", "The Clamps!", "F", 170.00, 10, 300.00, 75.0, "clamping_unit.jpg"),
-("Devil Unit", "The robot devil your on side", "F", 150.00, 10, 300.00, 75.0, "devil_unit.jpg"),
-("Hedonism Unit", "Devil bot's bestie", "U", 200.00, 10, 300.00, 75.0, "hedonism_unit.jpg"),
-("Kwanzaa Unit", "Better respect the Kwanzaa", "F", 210.00, 10, 300.00, 75.0, "kwanzaa_unit.jpg"),
-("Lucy Liu Unit", "Liu bot will always remember you - MEMORY DELETED", "F", 210.00, 10, 300.00, 75.0, "LucyLiu_unit.gif"),
-("Mafia Unit", "Classic Mafia Bot - Yous mugs better watch out", "F", 220.00, 10, 300.00, 75.0, "mafia_unit.jpg"),
-("Nixon Unit", "Evil Robot Nixon is BAaack!", "F", 230.00, 10, 300.00, 75.0, "nixon_unit.jpg"),
-("Orphan Unit", "You raised my hopes and dashed them most expertly sir.", "U", 230.00, 10, 300.00, 75.0, "orphan_unit.png"),
-("Police Unit", "It's about time we got of our fat robot asses..", "U", 240.00, 10, 300.00, 75.0, "police_unit.png"),
-("Preacher Unit", "Cast out the robot devil!", "D", 250.00, 10, 300.00, 75.0, "preacher_unit.gif"),
-("Santa Unit", "Merry X-Mas! HO Ho HO!", "A", 220.00, 10, 300.00, 75.0, "Santa_unit.png"),
-("Stabbing Unit", "The first time was to case the joint...", "F", 220.00, 10, 300.00, 75.0, "stabbing_unit.png"),
-("Thug Unit", "Goes great with Mafia Unit and Clamps!", "A", 220.00, 10, 300.00, 75.0, "thug_unit.png")
+("Bending Unit", "This is the classic bening unit. Not only does it bend things to various degrees, it also goes on literal benders. Its powercells are fuel by alcohol. So you will need to make sure that you have plenty of booze in stock. Also keep in mind that the unit is emmits larges amounts of carbon dioxide and methan. It would be wise to keep it away from children.Warning: The unit sometimes can not get up if it falls directly on its back.", "F", 160.00, 10, 300.00, 75.0, "bending_unit.jpg", "https://www.youtube.com/embed/U3RjP6_TV0E"),
+("Acting Unit", "<p>This is the quintisential Acting unit.  All other acting bots are nothing compared to this bot. Just ask the famed directors and producers that this unit has worked with:</p><ul><li>Directing Unit #14</li><li>Procuing Unit #2</li><li>Casting Unit #1138</li><li>Michael Bay</li></ul>", "U", 170.00, 10, 300.00, 75.0, "Calculon_unit.png", "https://www.youtube.com/embed/AqZlG5r4zXI"),
+("Clamping Unit", "\"Hey Clamps, why don't you give this guy the clamps?\"\"Oh, you mean do the thing that I think about all the time? What a brilliant idea.\"Yeah this unit, like the stabbing unit, will try and clamp you. That's what you get when you order a battle bot from the robot mafia.", "F", 180.00, 10, 300.00, 75.0, "clamping_unit.jpg", "https://www.youtube.com/embed/qf8_tn7lBIc"),
+("Devil Unit", "The devil unit destroys its enemies with tricky deals and shaddy negotiations. You may think you beat the devil unit by trading your hands for its hands so you can play the Holophoner better, but be careful. The devil unit will defeat its enemies one way or another. Say for example executing a long list of trades to get your favorite person to give up her ears so she can listen to your Holophoner concert. Then tricking you to give him his robot hands back or he'll marry your crush. It's only happened once before but it could happen again,", "F", 190.00, 10, 300.00, 75.0, "devil_unit.jpg", "https://www.youtube.com/embed/sFBhR4QcBtE"),
+("Hedonism Unit", "The Hedonism bot is only concerned with one thing: himself. Well that and robot orgies. What's more hedonistic than participating in robot orgies you say? Well eating grapes with one arm while gesturing with the other. That's right, this defeats it enemies with hedonism. Also voilence. Those grape eating arms are very powerful so watch out!", "D", 200.00, 10, 300.00, 75.0, "hedonism_unit.jpg", "https://www.youtube.com/embed/gt4Pfhd02w0"),
+("Kwanzaa Unit", "This is the perfect Kwanzaa Bot.  It helps destroy your enemies, especially if your enemies are the X-Mas unit and Passover Unit (Comming soon!).  Do not make Kwanzaa bot angry", "F", 210.00, 10, 300.00, 75.0, "kwanzaa_unit.png", ""),
+("Lucy Liu Unit", "Once only available on kidnapster.com, the Lucy Liu bot is now available here.  Purchase the Liu bot for memories that will last a lifetime - just don't delete her memory.", "F", 210.00, 10, 300.00, 75.0, "LucyLiu_unit.gif", ""),
+("Mafia Unit", "The mafia bot is the king of the robot underworld.  It works best with Thug Unit and Clamps.  ", "F", 220.00, 10, 300.00, 75.0, "mafia_unit.png", "https://www.youtube.com/embed/EXXiWgw9K9k"),
+("Nixon Unit", "Evil Robot Nixon.  As if Nixon in his corporeal form wasn't bad enough.  Now he has a shiney new robot body.  His head is also interchangeable.", "F", 230.00, 10, 300.00, 75.0, "nixon_unit.png", "https://www.youtube.com/embed/_t8hpEKb4gk"),
+("Orphan Unit", "Pick this robot for all your orphanarium needs.  It will beg for gruel, and sleep and shelter.  It's pretty useless, You raised my hopes and dashed them most expertly sir.", "U", 230.00, 10, 300.00, 75.0, "orphan_unit.png", ""),
+("Police Unit", "This is the police robot to end all robots.  Make sure you have plenty of donuts and coffee.  This unit will win any fight.", "U", 240.00, 10, 300.00, 75.0, "police_unit.png", "https://www.youtube.com/embed/-nt07hdOsaE"),
+("Preacher Unit", "This is the enemy of the Devil Unit.  Although preaching doesn't do very much.  It's fun to watch him fight against the devil unit", "D", 250.00, 10, 300.00, 75.0, "preacher_unit.gif", ""),
+("Santa Unit", "You DARE bribe Santa?! I'm gonna shove coal so far up your stocking, you'll be coughing up diamonds! Every year on Xmas Eve, Santa comes to Earth on his robot-reindeer sleigh to punish the naughty with extreme prejudice.  ", "F", 220.00, 10, 300.00, 75.0, "Santa_unit.png", "https://www.youtube.com/embed/KBpxbF1lqmI"),
+("Stabbing Unit", "Heya, Heya Ya! This is the stabbing unit. He will try and stab you when you unpackage him. Do not fall for his tricks. This is the robot that cases a joint and then robs it a little. His robbery was really only a cover for casing the joint and then robbing it a lot later. He's very very stabby. ", "F", 220.00, 10, 300.00, 75.0, "stabbing_unit.png", "https://www.youtube.com/embed/AboBRvj_8MI"),
+("Thug Unit", "Goes great with Mafia Unit and Clamps!", "F", 220.00, 10, 300.00, 75.0, "thug_unit.png", "")

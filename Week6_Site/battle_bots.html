@@ -19,7 +19,7 @@
             <nav>
                 <ul class="menu">
                     <li><a href="../homePage.html">Home</a> </li>
-                    <li><a href="../battle.html">Battle Bots</a></li>
+                    <li><a href="./battle.html">Battle Bots</a></li>
                     <li><a href="../aboutus.html">About Us</a></li>
                 </ul>
             </nav>
@@ -28,11 +28,15 @@
     </table>
     <table id="content_body" align="left" height="100%"  width="69%" >
         <td valign="top">
-            <?php include("product_info.php");
-                $prod = new product_info(1);
-                echo $prod->display_product();
-            ?>
-            <a class="bot-link" href="../bill_order_info.html" align="right">Buy Now!</a>
+            <table id="botlist">
+                <?php include("product_list.php");
+                    $list = new product_list();
+                    $list->query_db("D");
+                    $list->query_db("F");
+                    $list->query_db("U");
+                    echo $list->get_list();
+                ?>
+            </table>
         </td>
     </table>
     <table id="spacer_content" width="15%" height="100%" ></table>
