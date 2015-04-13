@@ -17,15 +17,15 @@ $bool_result = mysql_query( $query );
 # If the query failed, then stop processing the PHP script
 if ( $bool_result == FALSE )
 {
-    die( "The query against the table sampletable failed." );
+    die( "The query against the table product table failed." );
 }
 
 # If the query succeeded, retrieve all rows of the first column.
-$counter = 1;
+$counter = 0;
 while( $returned_row = mysql_fetch_row( $bool_result ))
 {
     $counter++;
-    echo "<p><strong>$counter.</strong> $returned_row[0]</p>";
+    echo "<p><strong>$counter.</strong> $returned_row[1]</p>";
 
 }
 
