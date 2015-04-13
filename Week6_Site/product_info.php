@@ -5,6 +5,7 @@
  * Date: 4/12/15
  * Time: 5:20 PM
  */
+include "sqlcreds.php";
 
 class product_info {
     //product infos
@@ -20,19 +21,18 @@ class product_info {
     private $_prod_demo;
 
     //sql info
-    private $server = "127.0.0.1:3306";
-    private $username = "root";
-    private $database = "cs482";
+    private $sqlinfo;
     private $query = "SELECT * FROM product WHERE prod_id = ";
 
     function __construct($prodid){
+        $this->sqlinfo = new sqlcreds("private");
         $this->_prodid = (int) $prodid;
         $this->queryDatabase();
     }
 
     function queryDatabase(){
-        mysql_connect( $this->server, $this->username);
-        mysql_select_db($this->database);
+        mysql_connect( $this->sqlinfo->server, $this->sqlinfo->username, $this->sqlinfo->password);
+        mysql_select_db($this->sqlinfo->database);
         $result = mysql_query($this->query . $this->_prodid);
         $result = mysql_fetch_row($result);
         $this->_prodname = $result[1];

@@ -1,14 +1,17 @@
 <?php
+include "sqlcreds.php";
 
+$sqlinfo = new sqlcreds("private");
 # Establish a connection to the database
-$server   = "127.0.0.1:3306";
-$username = "root";
-mysql_connect( $server, $username );
+#$server   = "localhost:3306";
+#$username = "laurare2_student5";
+#$password = '$v*L.;MB{Qzg';
+mysql_connect( $sqlinfo->server, $sqlinfo->username, $sqlinfo->password );
 
 
 # Select the schema in the database
 $database = "cs482";
-mysql_select_db( $database );
+mysql_select_db( $sqlinfo->database );
 
 # Execute a query
 $query    = "SELECT * FROM product";

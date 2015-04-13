@@ -5,27 +5,25 @@
  * Date: 4/12/15
  * Time: 8:18 PM
  */
-include "product_info.php";
+include "sqlcreds.php";
 
 class product_list {
     //sql info
     private $fighter = "<tr><td><H1>Fighters</H1></td></tr>";
     private $defender = "<tr><td><H1>Defenders</H1></td></tr>";
     private $useless = "<tr><td><H1>Useless</H1></td></tr>";
-    private $server = "127.0.0.1:3306";
-    private $username = "root";
-    private $database = "cs482";
+    private $sqlinfo;
     private $query_base = "SELECT prod_id, prod_name, prod_descrip, prod_filename FROM product ";
     private $showbots = "";
 
     function __construct(){
-
+        $this->sqlinfo = new sqlcreds("private");
     }
 
     function query_db($category){
         $result = null;
-        mysql_connect( $this->server, $this->username);
-        mysql_select_db($this->database);
+        mysql_connect( $this->sqlinfo->server, $this->sqlinfo->username, $this->sqlinfo->password);
+        mysql_select_db($this->sqlinfo->database);
         if($category == "F"){
             //Get fighters
             $result = mysql_query($this->query_base . "WHERE prod_category = 'F'");
