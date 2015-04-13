@@ -29,10 +29,10 @@
     <table id="content_body" align="left" height="100%"  width="69%" >
         <td valign="top">
             <?php include("product_info.php");
-                $prod = new product_info(1);
+                $prod = new product_info($_GET['prod_id']);
                 echo $prod->display_product();
             ?>
-            <a class="bot-link" href="../bill_order_info.html" align="right">Buy Now!</a>
+
         </td>
     </table>
     <table id="spacer_content" width="15%" height="100%" ></table>
