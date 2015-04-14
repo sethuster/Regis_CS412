@@ -1,6 +1,6 @@
 <?php
 
-include "sqlcreds.php";
+include "../sqlcreds.php";
 $sqlinfo = new sqlcreds("private");
 
 mysql_connect($sqlinfo->server, $sqlinfo->username, $sqlinfo->password);
@@ -22,10 +22,10 @@ if($bool_result == false){
 else{
     echo "Customer Table created";
     $populate_table = 'INSERT into order_line (order_id, product_id, qty_ordered, qty_shipping, unit_price, unit_ship_price) VALUES
-(1, 1, 5, 5, 160.00, 300.00)';
+(1, 1, 5, 5, 160.00, 300.00);';
     $populate_result = mysql_query( $populate_table );
     if( $populate_result == FALSE){
-        die("Unable to populate product table");
+        die("Unable to populate order_line table");
     }
     else{
         echo "Product table populated.";

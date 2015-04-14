@@ -1,6 +1,6 @@
 <?php
 
-include "sqlcreds.php";
+include "../sqlcreds.php";
 $sqlinfo = new sqlcreds("private");
 
 mysql_connect($sqlinfo->server, $sqlinfo->username, $sqlinfo->password);
@@ -34,14 +34,14 @@ if($bool_result == false){
 }
 else{
     echo "Customer Table created";
-    $populate_table = 'INSERT into customer (first_name, last_name, shipping_address_1, shipping_address_2, shipping_city, shipping_region, shipping_postal_code, billing_address_1, billing_address_2, billing_city, billing_region, billing_postal_code,
- password, email_address, home_phone, business_phone, mobile_phone) VALUES
- ("Seth", "Urban", "123 Shipp Ct", "Unit A", "Denver", "Colorado", "80123", "321 Bill Dr", "Unit 1", "Aspen", "Colorado", "80122", "password1", "urban123@regis.edu", "3031112222", "3032223333", "3033334444"),
- ("Philip", "Fry", "02 W 57th Street", "", "New New York", "New York", "01182", "02 W 57th Street", "New New York", "New York", "01182", "password2", "philipfry@planetexpress.com", "54711122222", "5472223333", "5473334444")';
+    $populate_table = 'INSERT into customer (first_name, last_name, shipping_address_1, shipping_address_2, shipping_city, shipping_region, shipping_postal_code, billing_address_1, billing_address_2,
+billing_city, billing_region, billing_postal_code, password, email_address, home_phone, business_phone, mobile_phone) VALUES
+ ("Seth", "Urban", "123 Shipp Ct", "Unit A", "Denver", "Colorado", "80123", "321 Bill Dr", "Unit 1", "Aspen", "Colorado", "80122", "password1","urban123@regis.edu", "3031112222", "3032223333", "3033334444"),
+ ("Philip", "Fry", "02 W 57th St", "Unit A", "New New York", "New York", "01182", "02 W 57th Street", "", "New New York", "New York", "01182", "password2", "philipfry@planetexpress.com", "54711122222", "5472223333", "5473334444");';
 
     $populate_result = mysql_query( $populate_table );
     if( $populate_result == FALSE){
-        die("Unable to populate product table");
+        die("Unable to populate customer table");
     }
     else{
         echo "Product table populated.";

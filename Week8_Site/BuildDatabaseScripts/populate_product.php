@@ -1,5 +1,5 @@
 <?php
-include "sqlcreds.php";
+include "../sqlcreds.php";
 
 $sqlinfo = new sqlcreds();
 # Establish a connection to the database

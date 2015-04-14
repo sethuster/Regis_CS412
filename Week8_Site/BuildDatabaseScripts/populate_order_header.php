@@ -1,6 +1,6 @@
 <?php
 
-include "sqlcreds.php";
+include "../sqlcreds.php";
 $sqlinfo = new sqlcreds("private");
 
 mysql_connect($sqlinfo->server, $sqlinfo->username, $sqlinfo->password);
@@ -40,13 +40,14 @@ if($bool_result == false){
 }
 else{
     echo "Customer Table created";
-    $populate_table = 'INSERT into order_header (customer_id, order_date, method_of_payment, payment_number, expire_month, expire_year, shipping_method, shipping_type, billto_first_name, billto_last_name, billto_address_1,
- billto_address_2, billto_city, billto_region, billto_postal_code, shipto_first_name, shipto_last_name, shipto_address_1, shipto_address_2, shipto_city, shipto_region, shipto_postal_code, estimated_delivery_date) VALUES
-(-1, "01/01/1900", "MasterCard", "4444123412341234", "01", "1900", "FedEx", "Ground", "Test BILL FN", "Test BILL LN", "123 Fake st", "unit test", "Testoloplis", "Testarado", "90210", "Test SHIP FN", "Test SHIP LN", "Testopolis", "Testarado", "90210", "01/02/1900")';
+    $populate_table = 'INSERT into order_header (customer_id, order_date, method_of_payment, payment_number, expire_month, expire_year, shipping_method, shipping_type, billto_first_name, billto_last_name, billto_address_1, billto_address_2, billto_city, billto_region, billto_postal_code, shipto_first_name,
+shipto_last_name, shipto_address_1, shipto_address_2, shipto_city, shipto_region, shipto_postal_code, estimated_delivery_date) VALUES
+(-1, "01/01/1900", "MasterCard", "4444123412341234", "01", "1900", "FedEx", "Ground", "Test BILL FN", "Test BILL LN", "123 Fake st", "unit test", "Testoloplis", "Testarado", "90210", "Test SHIP FN",
+"Test SHIP LN", "312 Fake st", "test unit", "Testopolis", "Testarado", "90210", "01/02/1900");';
 
     $populate_result = mysql_query( $populate_table );
     if( $populate_result == FALSE){
-        die("Unable to populate product table");
+        die("Unable to populate order_header table");
     }
     else{
         echo "Product table populated.";
