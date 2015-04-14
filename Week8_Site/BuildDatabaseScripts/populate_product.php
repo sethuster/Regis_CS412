@@ -41,7 +41,7 @@ else{
     ("Devil Unit", "The devil unit destroys its enemies with tricky deals and shaddy negotiations. You may think you beat the devil unit by trading your hands for its hands so you can play the Holophoner better, but be careful. The devil unit will defeat its enemies one way or another. Say for example executing a long list of trades to get your favorite person to give up her ears so she can listen to your Holophoner concert. Then tricking you to give him his robot hands back or hell marry your crush. It has only happened once before but it could happen again,", "F", 190.00, 10, 300.00, 75.0, "devil_unit.jpg", "https://www.youtube.com/embed/sFBhR4QcBtE"),
     ("Hedonism Unit", "The Hedonism bot is only concerned with one thing: himself. Well that and robot orgies. What is more hedonistic than participating in robot orgies you say? Well eating grapes with one arm while gesturing with the other. Thats right, this defeats it enemies with hedonism. Also voilence. Those grape eating arms are very powerful so watch out!", "D", 200.00, 10, 300.00, 75.0, "hedonism_unit.jpg", "https://www.youtube.com/embed/gt4Pfhd02w0"),
     ("Kwanzaa Unit", "This is the perfect Kwanzaa Bot.  It helps destroy your enemies, especially if your enemies are the X-Mas unit and Passover Unit (Comming soon!).  Do not make Kwanzaa bot angry", "F", 210.00, 10, 300.00, 75.0, "kwanzaa_unit.png", ""),
-    ("Lucy Liu Unit", "Once only available on kidnapster.com, the Lucy Liu bot is now available here.  Purchase the Liu bot for memories that will last a lifetime - just don not delete her memory.", "F", 210.00, 10, 300.00, 75.0, "LucyLiu_unit.gif", ""),
+    ("Lucy Liu Unit", "Once only available on kidnapster.com, the Lucy Liu bot is now available here.  Purchase the Liu bot for memories that will last a lifetime - just don not delete her memory.", "F", 210.00, 10, 300.00, 75.0, "Lucyliu_unit.gif", ""),
     ("Mafia Unit", "The mafia bot is the king of the robot underworld.  It works best with Thug Unit and Clamps.  ", "F", 220.00, 10, 300.00, 75.0, "mafia_unit.png", "https://www.youtube.com/embed/EXXiWgw9K9k"),
     ("Nixon Unit", "Evil Robot Nixon.  As if Nixon in his corporeal form was not bad enough.  Now he has a shiney new robot body.  His head is also interchangeable.", "F", 230.00, 10, 300.00, 75.0, "nixon_unit.png", "https://www.youtube.com/embed/_t8hpEKb4gk"),
     ("Orphan Unit", "Pick this robot for all your orphanarium needs.  It will beg for gruel, and sleep and shelter.  Its pretty useless, You raised my hopes and dashed them most expertly sir.", "U", 230.00, 10, 300.00, 75.0, "orphan_unit.png", ""),
@@ -61,7 +61,6 @@ else{
 }
 
 $test_prod = mysql_query("SELECT * FROM product");
-
 
 # If the query succeeded, retrieve all rows of the first column.
 $counter = 0;
