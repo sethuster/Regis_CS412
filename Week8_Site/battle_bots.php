@@ -28,7 +28,7 @@
     </table>
     <table id="content_body" align="left" height="100%"  width="69%" >
         <td valign="top">
-            <?php include("product_list.php");
+            <?php include("./php_classes/product_list.php");
                 $list = new product_list();
                 $list->query_db("D");
                 $list->query_db("F");

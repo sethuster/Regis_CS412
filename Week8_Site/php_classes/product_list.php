@@ -1,11 +1,6 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: SethUrban
- * Date: 4/12/15
- * Time: 8:18 PM
- */
-include "sqlcreds.php";
+
+include_once "sqlcreds.php";
 
 class product_list {
     //sql info
@@ -46,7 +41,7 @@ class product_list {
             $this->showbots .= $this->list_bots($result);
         }
         if($category == "ORDER"){
-            $result = mysql_query("SELECT prod_name, prod_cost, prod_filename FROM product;");
+            $result = mysql_query("SELECT prod_id, prod_name, prod_cost, prod_filename FROM product;");
             $this->showbots = "";
             $this->showbots = $this->order_bots($result);
         }
@@ -61,7 +56,7 @@ class product_list {
                     <td>
                         <h2>' . $returned_row[1] . '</h2>
                         <p>' . $returned_row[2] . '</p>
-                        <a class="bot-link" href="./product_detail.php?prod_id=' . $returned_row[0] . '"align="right">More Info</a>
+                        <a class="bot-link" href="../product_detail.php?prod_id=' . $returned_row[0] . '"align="right">More Info</a>
                     </td>
                 </tr>';
         }
@@ -88,16 +83,16 @@ class product_list {
             $order_list .= '<tr>
                         <td width="80px" align="center">
                             <!-- Image of Unit -->
-                            <img src="./images/robots/' . $returned_row[2] . '" height="75px" width="75px">
+                            <img src="./images/robots/' . $returned_row[3] . '" height="75px" width="75px">
                         </td>
                         <td>
                             <!-- Name of Unit -->
-                            <b>' . $returned_row[0] . '</b>
+                            <b>' . $returned_row[1] . '</b>
                         </td>
                         <td>
                             <!-- Price of Unit -->
-                            Price: ' . $returned_row[1] . '
-                            <br>Quantity: <input type="text" name="bending_qty" size="3" maxlength="3" placeholder="0">
+                            Price: ' . $returned_row[2] . '
+                            <br>Quantity: <input type="text" name="' . $returned_row[0] . '" size="3" maxlength="3" placeholder="0">
                         </td>
                     </tr>';
         }

@@ -20,7 +20,7 @@
             <nav>
                 <ul class="menu">
                     <li><a href="homePage.php">Home</a> </li>
-                    <li><a href="./robots/battle.html">Battle Bots</a></li>
+                    <li><a href="./battle_bots.php">Battle Bots</a></li>
                     <li><a href="./aboutus.html">About Us</a></li>
                 </ul>
             </nav>
@@ -29,7 +29,12 @@
     </table>
     <table id="content_body" align="left" height="100%"  width="69%" >
         <tr valign="top" height="5%">
-            <td><h2>Billing & Shipping Information</h2></td>
+
+            <td><h2><?php include("./php_classes/orders.php");
+                    $test = new orders();
+                    echo $test->get_products();
+
+                    ?></h2></td>
         </tr>
         <form method="get" onsubmit="return validateForm(this.form)" action="./bill_order_success.html">
         <tr id="customer_info" valign="top" height="20%">

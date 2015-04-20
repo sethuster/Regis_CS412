@@ -20,7 +20,7 @@
             <nav>
                 <ul class="menu">
                     <li><a href="homePage.php">Home</a> </li>
-                    <li><a href="./robots/battle.html">Battle Bots</a></li>
+                    <li><a href="./battle_bots.php">Battle Bots</a></li>
                     <li><a href="./aboutus.html">About Us</a></li>
                 </ul>
             </nav>
@@ -33,11 +33,11 @@
                 <p id="order_err"></p>
             </td>
         </tr>
-        <form method="get" name= "orderform" onsubmit="return checkOrder(this.form)" action="./bill_billing_info.html">
+        <form method="post" name= "orderform" onsubmit="return checkOrder(this.form)" action="bill_billing_info.php">
         <tr valign="top"  height="90%">
             <td>
                 <table id="product_list" width="100%">
-                <?php include("product_list.php");
+                <?php include("./php_classes/product_list.php");
                     $list = new product_list();
                     $list->query_db("ORDER");
                     echo $list->get_list();

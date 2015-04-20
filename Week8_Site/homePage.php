@@ -22,7 +22,7 @@
             <nav>
                 <ul class="menu">
                     <li><a href="./homePage.php">Home</a> </li>
-                    <li><a href="battle_bots.php">Battle Bots</a></li>
+                    <li><a href="./battle_bots.php">Battle Bots</a></li>
                     <li><a href="./aboutus.html">About Us</a></li>
                 </ul>
             </nav>
@@ -39,7 +39,7 @@
             <p>So if you want to buy some super cool battle robots, check out he menu and browse our collection. </p>
             <hr>
             <p>Here's a brief sample of the different kinds of bots that we have available:</p>
-                <?php include("product_list.php");
+                <?php include("./php_classes/product_list.php");
                     $list = new product_list();
                     $list->query_db("ALL");
                     echo $list->get_list();

@@ -28,7 +28,7 @@
     </table>
     <table id="content_body" align="left" height="100%"  width="69%" >
         <td valign="top">
-            <?php include("product_info.php");
+            <?php include("./php_classes/product_info.php");
                 $prod = new product_info($_GET['prod_id']);
                 echo $prod->display_product();
             ?>
