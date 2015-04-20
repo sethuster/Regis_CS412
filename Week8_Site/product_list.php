@@ -14,7 +14,7 @@ class product_list {
     private $useless = "<tr><td><H1>Useless</H1></td></tr>";
     private $sqlinfo;
     private $query_base = "SELECT prod_id, prod_name, prod_descrip, prod_filename FROM product ";
-    private $showbots = "";
+    private $showbots = ""; //This is the HTML that gets returned from get_list();
 
     function __construct(){
         $this->sqlinfo = new sqlcreds("private");
@@ -40,9 +40,15 @@ class product_list {
             $this->showbots .= $this->defender . $this->get_bots($result);
         }
         if($category == "ALL"){
+            //This is for the home page to get all the bots in a list
             $result = mysql_query("SELECT prod_id, prod_name FROM product");
             $this->showbots = "";
             $this->showbots .= $this->list_bots($result);
+        }
+        if($category == "ORDER"){
+            $result = mysql_query("SELECT prod_name, prod_cost, prod_filename FROM product;");
+            $this->showbots = "";
+            $this->showbots = $this->order_bots($result);
         }
     }
 
@@ -73,7 +79,29 @@ class product_list {
                 '"> ' . $returned_row[1] . '</option>';
         }
         return '<select onchange="location = this.options[this.selectedIndex].value;">' . $dd_options . '</select>';
+    }
 
+    function order_bots($result){
+        $order_list = "";
+        while ($returned_row = mysql_fetch_row($result))
+        {
+            $order_list .= '<tr>
+                        <td width="80px" align="center">
+                            <!-- Image of Unit -->
+                            <img src="./images/robots/' . $returned_row[2] . '" height="75px" width="75px">
+                        </td>
+                        <td>
+                            <!-- Name of Unit -->
+                            <b>' . $returned_row[0] . '</b>
+                        </td>
+                        <td>
+                            <!-- Price of Unit -->
+                            Price: ' . $returned_row[1] . '
+                            <br>Quantity: <input type="text" name="bending_qty" size="3" maxlength="3" placeholder="0">
+                        </td>
+                    </tr>';
+        }
+        return $order_list;
     }
 
 }

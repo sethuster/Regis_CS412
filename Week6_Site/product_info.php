@@ -55,7 +55,7 @@ class product_info {
         $prod_body = '<table width="100%"><td width="35%"><img src="' . $this->_prod_filename . '" width="200px" height="300px"></td>
                 <td valign="top"><p>' . $this->_prodDescription . '</p>' . $this->_prod_demo . '</td></table>';
         $prod_prices = '<table class="prices" width="100%"><td>Unit Price: $' . $this->_prodcost . '</td><td>Shipping Cost: $' . $this->_prod_ship_cost . '</td></table>';
-        $prod_buy = '<a class="bot-link" href="./bill_order_info.html" align="right">Buy Now!</a>';
+        $prod_buy = '<a class="bot-link" href="./bill_order_info.php" align="right">Buy Now!</a>';
         return $prod_head . $prod_body . $prod_prices . $prod_buy;
     }
 
