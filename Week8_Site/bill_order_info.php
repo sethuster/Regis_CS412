@@ -5,6 +5,9 @@
     <title>Seth's Electronics</title>
     <link rel="stylesheet" type="text/css" href="main_style.css">
     <script type="text/javascript" src="order.js"></script>
+    <?php include("./php_classes/product_list.php");
+    $list = new product_list();
+    $list->query_db("ORDER");?>
 </head>
 <body>
 <table style="width:100%" >
@@ -37,9 +40,7 @@
         <tr valign="top"  height="90%">
             <td>
                 <table id="product_list" width="100%">
-                <?php include("./php_classes/product_list.php");
-                    $list = new product_list();
-                    $list->query_db("ORDER");
+                <?php
                     echo $list->get_list();
                 ?>
                 </table>

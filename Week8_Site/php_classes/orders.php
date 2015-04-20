@@ -44,6 +44,24 @@ shipto_city,shipto_region,shipto_postal_code,estimated_delivery_date)VALUES("","
         $returned_row = mysql_fetch_row($orderid);
         $this->orderid = $returned_row[0];
 
+        for($i = 0; $i < count($this->products); $i++){
+            $returned_row = mysql_query('SELECT prod_cost, prod_qty_on_hand, prod_ship_cost FROM product WHERE prod_id = ' . $this->products[$i] . ';' );
+            $returned_row = mysql_fetch_row($returned_row);
+            $available = $returned_row[1] - $this->ordered_qtys[$i];
+            if($available > 0){
+                $available = $this->ordered_qtys[$i];
+            }
+            else{
+                //This is where we have less on hand than customer wants
+                $available = $this->ordered_qtys[$i] - $available;
+            }
+            mysql_query('INSERT into order_line (order_id, product_id, qty_ordered, qty_shipping, unit_price, unit_ship_price) VALUES ('.$this->orderid.', '.$this->products[$i].',
+            '.$this->ordered_qtys[$i].', '.$available.', '.$returned_row[0].', '.$returned_row[2].');');
+        }
+    }
+
+    function get_orderid(){
+        return $this->orderid;
     }
 
 
