@@ -1,7 +1,7 @@
 <?php
-include "../sqlcreds.php";
+include "../php_classes/sqlcreds.php";
 
-$sqlinfo = new sqlcreds();
+$sqlinfo = new sqlcreds("private");
 # Establish a connection to the database
 #$server   = "localhost:3306";
 #$username = "laurare2_student5";
@@ -25,6 +25,7 @@ $create_table    = "CREATE TABLE product (
   prod_filename VARCHAR(40) NULL,
   prod_demo VARCHAR(100) NULL,
   PRIMARY KEY (prod_id));";
+$bool_result = mysql_query( "DROP TABLE product" );
 $bool_result = mysql_query( $create_table );
 
 # If the query failed, then stop processing the PHP script

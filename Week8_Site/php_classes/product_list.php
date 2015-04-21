@@ -56,7 +56,7 @@ class product_list {
                     <td>
                         <h2>' . $returned_row[1] . '</h2>
                         <p>' . $returned_row[2] . '</p>
-                        <a class="bot-link" href="../product_detail.php?prod_id=' . $returned_row[0] . '"align="right">More Info</a>
+                        <a class="bot-link" href="./product_detail.php?prod_id=' . $returned_row[0] . '"align="right">More Info</a>
                     </td>
                 </tr>';
         }

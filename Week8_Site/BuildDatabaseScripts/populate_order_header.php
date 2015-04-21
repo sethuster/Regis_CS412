@@ -1,6 +1,6 @@
 <?php
 
-include "../sqlcreds.php";
+include "../php_classes/sqlcreds.php";
 $sqlinfo = new sqlcreds("private");
 
 mysql_connect($sqlinfo->server, $sqlinfo->username, $sqlinfo->password);
@@ -32,7 +32,7 @@ shipto_region VARCHAR (25) NULL,
 shipto_postal_code VARCHAR (25) NULL,
 estimated_delivery_date VARCHAR (20),
 PRIMARY KEY (order_id));";
-
+$bool_result = mysql_query( "DROP TABLE order_header" );
 $bool_result = mysql_query( $create_table );
 
 if($bool_result == false){

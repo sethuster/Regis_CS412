@@ -1,6 +1,6 @@
 <?php
 
-include "../sqlcreds.php";
+include "../php_classes/sqlcreds.php";
 $sqlinfo = new sqlcreds("private");
 
 mysql_connect($sqlinfo->server, $sqlinfo->username, $sqlinfo->password);
@@ -26,7 +26,7 @@ home_phone VARCHAR (25) NULL,
 business_phone VARCHAR (25) NULL,
 mobile_phone VARCHAR (25) NULL,
 PRIMARY KEY (customer_id));";
-
+$bool_result = mysql_query( "DROP TABLE customer" );
 $bool_result = mysql_query( $create_table );
 
 if($bool_result == false){

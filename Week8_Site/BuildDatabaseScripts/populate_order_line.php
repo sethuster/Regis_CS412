@@ -1,6 +1,6 @@
 <?php
 
-include "../sqlcreds.php";
+include "../php_classes/sqlcreds.php";
 $sqlinfo = new sqlcreds("private");
 
 mysql_connect($sqlinfo->server, $sqlinfo->username, $sqlinfo->password);
@@ -13,7 +13,7 @@ qty_ordered INT NULL,
 qty_shipping INT NULL,
 unit_price DECIMAL(6,2) NULL,
 unit_ship_price DECIMAL(6,2) NULL);";
-
+$bool_result = mysql_query( "DROP TABLE order_line" );
 $bool_result = mysql_query( $create_table );
 
 if($bool_result == false){
