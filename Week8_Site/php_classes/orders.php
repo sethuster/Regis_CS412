@@ -94,9 +94,25 @@ shipto_city,shipto_region,shipto_postal_code,estimated_delivery_date)VALUES("","
         }
 
         $output = "";
-        foreach ($_POST as $key => $value){
-            $output .= "key: " . $key . " value: " . $value . "<br>";
+        //now get the items ordered
+        $orders = mysql_query('SELECT product_id, qty_ordered, qty_shipping, unit_price, unit_ship_price FROM order_line where order_id = "'.$orderid.'";');
+        $totalship = 0;
+        $totalunits = 0;
+
+        while ($returned_row = mysql_fetch_row($orders)){
+            $product_row = mysql_query('SELECT prod_name FROM product WHERE prod_id = "'.$returned_row[0].'";');
+            $product = mysql_fetch_row($product_row);
+            $output .= '<tr><td align="left"><p>'.$product[0].'</p></td><td align="center"><p>'.$returned_row[1].'</p></td><td align="center"><p>'.$returned_row[2].'</p></td><td align="right"><p> $'
+                .((floatval($returned_row[3]) + floatval($returned_row[4])).'</p></td></tr>');
+            $totalship += $returned_row[4];
+            $totalunits += $returned_row[3];
         }
+
+        $output .= '<tr><td align="left"><b>Shipping Info</b></td><td></td><td></td><td align="right"><b>Grand Total</b></td>';
+
+        $output .= '<tr><td align="left"><p>Shipping Method: '.$_POST['shipping'].'<br> ShipTO: '.$_POST['ship_first_name'] . ' ' .$_POST['ship_last_name'].'<br> Address: ' . $_POST['ship_address1'].'<br>'.$_POST['ship_address2'].'
+        <br> City: '.$_POST['ship_city'].' State: ' .$_POST['ship_state'].' Zip: '.$_POST['ship_zip'].'</p></td><td></td><td></td><td align="right">Shipping Total: '.$totalship.'<br>Item Total: '.$totalunits.'
+        <br>Grant Total: '.(floatval($totalship) + floatval($totalunits)).'</rb></td>';
         return $output;
 
     }

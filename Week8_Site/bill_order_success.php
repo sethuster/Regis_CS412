@@ -32,13 +32,22 @@
     </table>
     <table id="content_body" align="left" height="100%"  width="69%" >
        <tr>
-           <td align="center" valign="top">
+           <td align="center" valign="top" >
                <h1>Order Successful!</h1>
-               <h2><?php echo $order->create_order($_GET['orderid']); ?></h2>
+               <h2></h2>
                <h2>Please give us some time to send out your new battle bot!</h2>
                <h3>Thanks for Shopping at S-Mart.  Shop Smart.  Shop S-Mart.</h3>
            </td>
        </tr>
+    </table>
+    <table id="content_body" align="center" height="100%" width="69%">
+        <tr align="center" valign="top">
+            <td align="left" width="50%"><p><b>Items Ordered</b></p></td>
+            <td align="center" width="10%"><p><b>QTY Ordered</b></p></td>
+            <td align="center" width="10%"><p><b>QTY Shipped</b></p></td>
+            <td align="right" width="30%"><p><b>Item Total</b></p></td>
+        </tr>
+        <?php echo $order->create_order($_GET['orderid']);?>
     </table>
     <table id="spacer_content" width="15%" height="100%" ></table>
     <table id="footer" align="center" valign="bottom" height="15%" width="100%">
