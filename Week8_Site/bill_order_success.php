@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>Seth's Electronics</title>
     <link rel="stylesheet" type="text/css" href="main_style.css">
+    <?php include_once("./php_classes/orders.php");
+        $order = new orders();
+
+    ?>
 </head>
 <body>
 <table style="width:100%" >
@@ -19,7 +23,7 @@
             <nav>
                 <ul class="menu">
                     <li><a href="homePage.php">Home</a> </li>
-                    <li><a href="./robots/battle.html">Battle Bots</a></li>
+                    <li><a href="./battle_bots.php">Battle Bots</a></li>
                     <li><a href="./aboutus.html">About Us</a></li>
                 </ul>
             </nav>
@@ -30,6 +34,7 @@
        <tr>
            <td align="center" valign="top">
                <h1>Order Successful!</h1>
+               <h2><?php echo $order->create_order($_GET['orderid']); ?></h2>
                <h2>Please give us some time to send out your new battle bot!</h2>
                <h3>Thanks for Shopping at S-Mart.  Shop Smart.  Shop S-Mart.</h3>
            </td>

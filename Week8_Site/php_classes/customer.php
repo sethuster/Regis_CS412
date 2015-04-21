@@ -28,10 +28,6 @@ class customer {
     private $home_phone;
     private $bus_phone;
     private $mobile_phone;
-    private $cc_number;
-    private $cc_expm;
-    private $cc_expy;
-    private $cc_ccv;
 
     private $sqlinfo;
 
@@ -59,12 +55,20 @@ class customer {
         $this->s_postalcode = $postal;
     }
 
-    function get_payment($cardnum, $expm, $expy, $ccv){
-        $this->cc_number = $cardnum;
-        $this->cc_expm = $expm;
-        $this->cc_expy = $expy;
-        $this->cc_ccv = $ccv;
+    function post_info(){
+        mysql_connect($this->sqlinfo->server, $this->sqlinfo->username, $this->sqlinfo->password);
+        mysql_select_db($this->sqlinfo->database);
+        $result = mysql_query('INSERT INTO customer(first_name,last_name,shipping_address_1,shipping_address_2,shipping_city,shipping_region,shipping_postal_code,
+        billing_address_1,billing_address_2,billing_city,billing_region,billing_postal_code)
+        VALUES("'.$this->first_name.'","'.$this->last_name.'","'.$this->s_address_1.'","'.$this->s_address_2.'","'.$this->s_city.'","'.$this->s_region.'","'.$this->s_postalcode.'",
+        "'.$this->b_address1.'","'.$this->b_address2.'","'.$this->b_city.'","'.$this->b_region.'","'.$this->b_postalcode.'");');
+        $result = mysql_query('SELECT customer_id FROM customer WHERE first_name = "'.$this->first_name .'" AND last_name = "'.$this->last_name.'" AND billing_postal_code = "' . $this->b_postalcode.'";');
+        $returned_row = mysql_fetch_row($result);
+        $customerid = $returned_row[0];
+        return $customerid;
     }
+
+
 
 
 

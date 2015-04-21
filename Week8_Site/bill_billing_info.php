@@ -5,6 +5,11 @@
     <title>Seth's Electronics</title>
     <link rel="stylesheet" type="text/css" href="main_style.css">
     <script type="text/javascript" src="order.js"></script>
+    <?php include_once("./php_classes/orders.php");
+    $test = new orders();
+    $test->get_products();
+
+    ?>
 </head>
 <body onload="setToday();">
 <table style="width:100%" >
@@ -30,13 +35,9 @@
     <table id="content_body" align="left" height="100%"  width="69%" >
         <tr valign="top" height="5%">
 
-            <td><h2><?php include("./php_classes/orders.php");
-                    $test = new orders();
-                    echo $test->get_products();
-
-                    ?></h2></td>
+            <td><h2>Billing and Shipping Information</h2></td>
         </tr>
-        <form method="get" onsubmit="return validateForm(this.form)" action="./bill_order_success.html">
+        <form method="post" onsubmit="return validateForm(this.form)" action="bill_order_success.php?orderid=<?php echo $test->get_orderid();?>">
         <tr id="customer_info" valign="top" height="20%">
             <td>
                 <h3>Customer Information</h3>
